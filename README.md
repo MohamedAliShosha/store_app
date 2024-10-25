@@ -1,16 +1,34 @@
-# store_app
+# Store App
 
-A new Flutter project.
+A Flutter-based store application that fetches product data from an API, displays it in a user-friendly interface, and allows clients to update product information via a dedicated product page.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Product Listing**: Displays a list of products fetched from an API.
+- **Product Details**: Shows detailed information about each product.
+- **Product Update**: Allows clients to edit and update product information directly from the product page.
+- **Real-Time Sync**: Changes made to the product information are updated in real-time on the server.
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```plaintext
+lib/
+├── models/           # Data models for the app
+├── screens/          # UI Screens (Home, Product Details, Product Update)
+├── services/         # API Service to handle network requests
+├── widgets/          # Custom reusable widgets
+├── config.dart       # Configuration file (e.g., API URL)
+└── main.dart         # Main entry point
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## API
+
+The app interacts with a RESTful API to fetch and update product data. Expected endpoints:
+
+- **GET** `/products`: Retrieves the list of products.
+- **GET** `/products/{id}`: Fetches details of a single product.
+- **PUT** `/products/{id}`: Updates the specified product with new data.
+
+## Technologies
+
+- **Flutter**: For building the cross-platform app.
+- **HTTP**: To handle API requests.
