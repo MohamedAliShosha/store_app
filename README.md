@@ -9,17 +9,6 @@ A Flutter-based store application that fetches product data from an API, display
 - **Product Update**: Allows clients to edit and update product information directly from the product page.
 - **Real-Time Sync**: Changes made to the product information are updated in real-time on the server.
 
-## Project Structure
-
-```plaintext
-lib/
-├── models/           # Data models for the app
-├── screens/          # UI Screens (Home, Product Details, Product Update)
-├── services/         # API Service to handle network requests
-├── widgets/          # Custom reusable widgets
-├── config.dart       # Configuration file (e.g., API URL)
-└── main.dart         # Main entry point
-
 ## API
 
 The app interacts with a RESTful API to fetch and update product data. Expected endpoints:
