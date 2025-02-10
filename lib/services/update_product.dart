@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/product_model.dart';
 
@@ -9,7 +11,7 @@ class UpdateProductService {
       required String image,
       required int id,
       required String category}) async {
-    print('product id  = $id');
+    log('product id  = $id');
     Map<String, dynamic> data =
         await Api().put(url: 'https://fakestoreapi.com/products/$id', body: {
       'title': title,

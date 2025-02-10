@@ -1,24 +1,38 @@
-import 'dart:convert';
+import 'dart:convert'; // Used to convert to & from Json
+import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-class Api {
-  Future<dynamic> get({required String url, @required String? token}) async {
-    Map<String, String> headers = {};
+class Api 
+{
+  // token => رمز مصادقة اختياري ان وجد
+  // All get requests returns response of type "Future".
+  Future<dynamic> get({required String url, @required String? token}) async 
+  {
+    // We created a headers map to store our token if it exists.
+    // if token exists we add an Auth header with the token value.
 
-    if (token != null) {
+    Map<String, String> headers = {}; //  headers are key-value pairs sent between the client and the server. 
+
+    if (token != null) 
+    {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
     http.Response response = await http.get(Uri.parse(url), headers: headers);
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200) 
+    {
       return jsonDecode(response.body);
-    } else {
+    } 
+    else 
+    {
       throw Exception(
           'there is a problem with status code ${response.statusCode}');
     }
+
   }
+
 
   Future<dynamic> post(
       {required String url,
@@ -51,7 +65,7 @@ class Api {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
 
-    print('url = $url body = $body token = $token ');
+    log('url = $url body = $body token = $token ');
     http.Response response =
         await http.put(Uri.parse(url), body: body, headers: headers);
     if (response.statusCode == 200) {

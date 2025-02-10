@@ -1,4 +1,5 @@
-class ProductModel {
+class ProductModel 
+{
   final dynamic id;
   final String title;
   final dynamic price;
