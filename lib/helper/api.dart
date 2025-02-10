@@ -28,6 +28,7 @@ class Api {
   }
 
   Future<dynamic> post(
+      // post request is used to create a new resource.
       {required String url,
       @required dynamic body,
       @required String? token}) async {
@@ -49,6 +50,7 @@ class Api {
   }
 
   Future<dynamic> put(
+      // put request is used to update an existing resource.
       {required String url,
       @required dynamic body,
       @required String? token}) async {
