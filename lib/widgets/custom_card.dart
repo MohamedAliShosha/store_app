@@ -3,12 +3,12 @@ import 'package:store_app/models/product_model.dart';
 import 'package:store_app/pages/update_product_page.dart';
 
 class CustomCard extends StatelessWidget {
-  CustomCard({
+  const CustomCard({
     required this.product,
     super.key,
   });
 
-  ProductModel product;
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -39,19 +39,20 @@ class CustomCard extends StatelessWidget {
             child: Card(
                 elevation: 10,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         product.title.substring(0, 6),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
                       Row(
@@ -59,12 +60,12 @@ class CustomCard extends StatelessWidget {
                         children: [
                           Text(
                             r'$' '${product.price.toString()}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black,
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.favorite,
                             color: Colors.red,
                           ),

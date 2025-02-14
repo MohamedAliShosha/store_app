@@ -1,17 +1,18 @@
+// ignore: must_be_immutable
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
-  CustomTextField(
-      {this.onChanged,
+  const CustomTextField(
+      {super.key,
+      this.onChanged,
       this.inputType,
       this.hintText,
       this.obscuredText = false});
 
-  Function(String)? onChanged;
-  String? hintText;
-  bool? obscuredText; // I gave  it a default value of false
-  TextInputType? inputType; // I added this variable
+  final Function(String)? onChanged;
+  final String? hintText;
+  final bool? obscuredText; // I gave  it a default value of false
+  final TextInputType? inputType; // I added this variable
 
   @override
   Widget build(BuildContext context) {

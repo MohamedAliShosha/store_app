@@ -3,9 +3,11 @@ import 'package:store_app/models/product_model.dart';
 
 class CategoriesService {
   Future<List<ProductModel>> getCategoriesProduct(
-      {required String categoryName}) async {
-    List<dynamic> data = await Api()
-        .get(url: 'https://fakestoreapi.com/products/category/$categoryName');
+      {required String categoryName, required String token}) async {
+    List<dynamic> data = await Api().get(
+      url: 'https://fakestoreapi.com/products/category/$categoryName',
+      token: token,
+    );
 
     List<ProductModel> productList =
         []; // An empty list to store the products that return from the API

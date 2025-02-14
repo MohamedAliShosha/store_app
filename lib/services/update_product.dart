@@ -9,6 +9,7 @@ class UpdateProductService {
       required String price,
       required String desc,
       required String image,
+      // required String token,
       required int id,
       required String category}) async {
     log('product id  = $id');
