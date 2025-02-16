@@ -1,11 +1,10 @@
-class ProductModel 
-{
+class ProductModel {
   final dynamic id;
   final String title;
   final dynamic price;
   final String description;
   final String image;
-  final RatingModel rating;
+  final RatingModel rating; // A small map inside the larger map
   final String category;
 
   ProductModel(
@@ -17,6 +16,7 @@ class ProductModel
       required this.rating,
       required this.category});
 
+  // jsonData are the data I'll recieve from the API
   factory ProductModel.fromJson(jsonData) {
     return ProductModel(
         category: jsonData['category'],
@@ -29,6 +29,7 @@ class ProductModel
   }
 }
 
+// The model of the small map
 class RatingModel {
   final num rate;
   final int count;
