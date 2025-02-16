@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
+  // The API calss contains all the http methods.
   // token => رمز مصادقة اختياري ان وجد
   // All get requests returns response of type "Future".
   Future<dynamic> get({required String url, @required String? token}) async {
